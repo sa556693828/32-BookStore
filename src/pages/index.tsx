@@ -60,13 +60,6 @@ export default function Home() {
       onClick: () => goPage("/void"),
     },
     {
-      title: "THE LOGBOOK",
-      content: "?",
-      left: "STORY &",
-      right: "PHILOPHY",
-      onClick: () => goPage("/logbook"),
-    },
-    {
       title: "SYNTKN",
       content: "!",
       left: "REWARDS",
