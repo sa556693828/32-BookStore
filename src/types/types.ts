@@ -1,41 +1,35 @@
 export type TableName =
-  | "artist"
+  | "cart"
   | "users"
   | "msgs"
+  | "user_msgs"
   | "chat_members"
-  | "group_config"
-  | "group_tags"
-  | "user_in_chat"
-  | "user_tasks"
-  | "tasks";
+  | "goods"
+  | "order_goods_list"
+  | "orders"
+  | "seller_orders"
+  | "store";
 export const tableMap: Record<TableName, TableName> = {
-  artist: "artist",
+  cart: "cart",
   users: "users",
   msgs: "msgs",
+  user_msgs: "user_msgs",
   chat_members: "chat_members",
-  group_config: "group_config",
-  group_tags: "group_tags",
-  user_in_chat: "user_in_chat",
-  tasks: "tasks",
-  user_tasks: "user_tasks",
+  goods: "goods",
+  order_goods_list: "order_goods_list",
+  orders: "orders",
+  seller_orders: "seller_orders",
+  store: "store",
 };
 export type UserData = {
   user_id: number | null;
+  store_id: number | null;
   username: string;
   first_name: string;
   last_name: string;
-  evm_address: string;
-  google: string;
-  twitter: string;
-  github: string;
-  recaptcha: boolean;
-  email: string;
-  score: Array<number>;
-  ton_address: string;
-  inviteFrom_id: number | null;
-  testScore: number | null;
-  friends: Array<number>;
-  tokens: number | null;
+  user_address: string;
+  status: number | null;
+  user_phone: string;
 };
 export type UserTG = {
   allowsWriteToPm: boolean;
@@ -46,24 +40,13 @@ export type UserTG = {
   lastName: string;
   username: string;
 };
-
-export type EventType =
-  | "firstTest"
-  | "aiChat"
-  | "inviteFriends"
-  | "overFiveFriends"
-  | "connectWallet"
-  | "dailyGame"
-  | "dailyGameHighScore"
-  | "buyToken";
-//TODO: 新增事件上限
-export enum EventEnum {
-  firstTest = "firstTest",
-  aiChat = "aiChat",
-  inviteFriends = "inviteFriends",
-  overFiveFriends = "overFiveFriends", //TODO: add this event
-  connectWallet = "connectWallet",
-  dailyGame = "dailyGame",
-  dailyGameHighScore = "dailyGameHighScore",
-  buyToken = "buyToken",
-}
+export type GoodData = {
+  good_id: number | null;
+  good_photo: string;
+  good_name: string;
+  good_owner: string;
+  good_description: string;
+  good_price: number | null;
+  good_stock: number | null;
+  status: number | null;
+};
